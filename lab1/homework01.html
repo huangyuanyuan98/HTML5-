@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多媒体播放</title>
+	</head>
+	<body>
+		<audio  controls="controls" autoplay="autoplay" id="a">
+			<source src="musics/Good Time.mp3" type="audio/mp3">
+			<source src="musics/无法长大.mp3" type="audio/mp3">
+			您的浏览器不支持.
+		</audio>
+        <br />
+		<button id="play" onclick="playmusic()">播放</button>
+		<button id="pause" onclick="pausemusic()">暂停</button>
+		<script>
+			var play = document.getElementById('play');
+            var a = document.getElementById('a');
+            function playmusic(){
+                if(a.paused){
+                    a.play()
+                } else{
+                    a.pause();
+                }
+            }
+            function pausemusic(){
+                if(a.played){
+                    a.pause()
+                } else{
+                    a.play();
+                }
+            }
+		</script>
+	</body>
+</html>
