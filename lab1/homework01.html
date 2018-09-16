@@ -3,31 +3,134 @@
 	<head>
 		<meta charset="utf-8">
 		<title>多媒体播放</title>
+		<style>
+			body {
+                color: #000;
+                background: #fff;
+                margin: 0;
+                padding: 0;
+                font-family: Georgia, Palatino, serif;
+            }
+            #complement{
+            	width: 300px;
+            	height: 390px;
+            	border-style: solid;
+            	border-color: bisque;
+            	border-width: 1px;
+            }
+            #header{
+            	width: 300px;
+            	height: 30px;
+            	border-style: solid;
+            	border-color: goldenrod;
+            	border-width: 1px;
+            	float: left;
+            }
+            #head_left{
+            	width: 148px;
+            	height: 30px;
+            	border-style: solid;
+            	border-color: goldenrod;
+            	border-width: 1px;
+            	float: left;
+            	text-align: center;
+            	background-color:lightcoral;
+            	/*padding-top: 10px;*/
+            }
+            #head_right{
+            	width: 148px;
+            	height: 30px;
+            	border-style: solid;
+            	border-color: goldenrod;
+            	border-width: 1px;
+            	float: left;
+            	text-align: center;
+            	background-color: burlywood;
+            }
+            #content{
+            	width: 300px;
+            	height: 300px;
+            	float: left;
+            	background-color: bisque;
+            }
+            #anniu{
+            	float: right;
+            	padding-right: 0px;
+            }
+            #good{
+            	width: 300px;
+            	height: 35px;
+            }
+            #no{
+            	width: 300px;
+            	height: 35px;
+            }
+            #footer{
+            	width: 300px;
+            	height: 30px;
+            	background-color: bisque;
+            	margin-bottom: 0px;
+            }
+		</style>
 	</head>
 	<body>
-		<audio  controls="controls" autoplay="autoplay" id="a">
-			<source src="musics/Good Time.mp3" type="audio/mp3">
-			<source src="musics/无法长大.mp3" type="audio/mp3">
-			您的浏览器不支持.
-		</audio>
-        <br />
-		<button id="play" onclick="playmusic()">播放</button>
-		<button id="pause" onclick="pausemusic()">暂停</button>
+		<div id="complement">
+			<div id="head">
+				<div id="head_left">
+					<a>正在播放</a>
+				</div>
+				<div id="head_right">
+					<a>本地音乐</a>
+				</div>
+			</div>
+			<div id="content">
+				<div id="good">
+					Good Time
+					<audio autoplay="autoplay" id="a">
+		 			    <source src="../musics/Good Time.mp3" type="audio/mp3">
+			                     您的浏览器不支持.
+		            </audio>
+		            <div id="anniu">
+		                <button id="play" onclick="playmusic(a)">播放</button>
+		                <button id="pause" onclick="pausemusic(a)">暂停</button>
+		            </div>
+				</div>
+				<div id="no">
+					无法长大
+					<audio autoplay="autoplay" id="b">
+		 			    <source src="../musics/无法长大.mp3" type="audio/mp3">
+			                     您的浏览器不支持.
+		            </audio>
+		            <div id="anniu">
+		            	<button id="play" onclick="playmusic(b)">播放</button>
+		                <button id="pause" onclick="pausemusic(b)">暂停</button>
+		            </div>
+				</div>
+			</div>
+			<div id="footer">
+				<audio autoplay="autoplay" controls="controls" id="a">
+		 			<source src="../musics/Good Time.mp3" type="audio/mp3">
+		 			<source src="../musics/无法长大.mp3" type="audio/mp3">
+			                     您的浏览器不支持.
+		        </audio>
+			</div>
+		</div>
+		
 		<script>
-			var play = document.getElementById('play');
+//			var play = document.getElementById('play');
             var a = document.getElementById('a');
-            function playmusic(){
-                if(a.paused){
-                    a.play()
+            function playmusic(e){
+                if(e.paused){
+                    e.play();
                 } else{
-                    a.pause();
+                    e.pause();
                 }
             }
-            function pausemusic(){
-                if(a.played){
-                    a.pause()
+            function pausemusic(e){
+                if(e.played){
+                    e.pause();
                 } else{
-                    a.play();
+                    e.play();
                 }
             }
 		</script>
