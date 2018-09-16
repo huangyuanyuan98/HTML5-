@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>请填写个人信息</h1>
+       <form>
+            <fieldset>
+            <legend><font color="red">基本信息</font></legend>
+                               姓名<input type="text" name="name"  placeholder="请输入姓名"/><font color="red">*</font><br />
+                               年龄<input type="text" value="20" />
+            </fieldset>
+       </form>
+       <form>
+            <fieldset>
+            	<legend><font color="red">你想在哪里收到邮件？</font></legend>
+	                               邮箱<input type="text" required="required" placeholder="请输入邮箱" list="movie" id="regemail" />*
+            	<datalist id="movie">
+               		<option>@qq.com</option>
+              		<option>@163.com</option>
+	              	<option>@126.com</option>
+	             	<option>@gmail.com</option>
+             		<option>@yahoo.com.cn</option>
+            	</datalist>
+            </fieldset>
+       </form>
+       <form>
+            <fieldset>
+            <legend><font color="red">收入情况</font></legend>
+                               月收入<input type="text" name="salary" list="salary" value="20k+" results/><br />
+            <datalist id="salary">
+            	<option>20k+</option>
+            	<option>10k+</option>
+            	<option>5k+</option>
+            	<option>2k+</option>
+            </datalist>
+                               银行卡<input type="text" name="card" />
+                               有效期<input type="date" name="datedemo" />
+            </fieldset>
+       </form>
+       <form>
+            <fieldset>
+            <legend><font color="red">选取提交文件</font></legend>
+                              文件<input type="file" name="file" multiple="multiple"/>
+            </fieldset>
+       </form>
+       <br />
+       <form>
+       	    <input type="submit" />
+       </form>
+	</body>
+	<script>
+		function $$(id){
+		return document.getElementById(id);
+	    }
+    	var lists;
+	    var len;
+    	window.onload=function(){
+    		var objtxt=$$("regemail");
+	    	var objlist=$$("movie");
+     
+            lists=objlist.getElementsByTagName("option");
+            len=lists.length;
+
+            objtxt.onkeyup=function(){
+                //获取文本框中的值
+                var txt=this.value;
+                var flag="";
+                if(txt.indexOf("@")>0){
+                    flag=txt.substring(txt.indexOf("@")-1);//获取的输入的@开始的内容
+                    txt=txt.substring(0,txt.indexOf("@"));
+                }else{
+                    flag="";
+                }
+                var val="";
+                for(var i=0; i<len; i++){
+                    val=lists[i].textContent;
+                    val=val.substring(val.indexOf("@"));
+                    lists[i].textContent=txt+val;
+                }
+            }
+        }
+	</script>
+</html>
