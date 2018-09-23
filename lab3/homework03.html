@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#color{
+				height: 40px;
+				padding: 0px;
+				margin: 0px;
+				border-style: solid;
+            	border-color: grey;
+            	border-width: 1px;;
+			}
+			#p{
+				background-color: lightskyblue;
+			}
+			#color1{
+				width: 20px;
+				height: 20px;
+				background-color: gray;
+				margin-top: 10px;
+				margin-left: 10px;
+				float: left;
+			}
+			#color2{
+				width: 20px;
+				height: 20px;
+				background-color: slateblue;
+				float: left;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			#color3{
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				float: left;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			#color4{
+				width: 20px;
+				height: 20px;
+				background-color: lightskyblue;
+				float: left;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			#color5{
+				width: 20px;
+				height: 20px;
+				background-color: orange;
+				float: left;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			#color6{
+				width: 20px;
+				height: 20px;
+				background-color: greenyellow;
+				float: left;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+            <fieldset>
+            <legend><font color="red" size="5">页面换肤</font></legend>
+            <div id="color">
+            	<div id="color1" onclick="changeBackground('color1')"></div>
+            	<div id="color2" onclick="changeBackground('color2')"></div>
+            	<div id="color3" onclick="changeBackground('color3')"></div>
+            	<div id="color4" onclick="changeBackground('color4')"></div>
+            	<div id="color5" onclick="changeBackground('color5')"></div>
+            	<div id="color6" onclick="changeBackground('color6')"></div>
+            </div>
+            <div id="p">
+            	<p>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+            </div>
+            </fieldset>
+        </form>
+	</body>
+	<script>
+		function changeBackground(div){
+			var myDiv = document.getElementById(div);
+			        var finalStyle = myDiv.currentStyle ? myDiv.currentStyle : document.defaultView.getComputedStyle(myDiv, null);
+                    var finalColor = finalStyle.backgroundColor;
+//                  console.log(finalColor);
+                    localStorage.setItem("key",finalColor);
+                    var color = localStorage.getItem("key"); 
+					p.style.backgroundColor = color;
+//                  console.log(color);
+		}
+		window.onload = function(){
+			if(!window.localStorage){
+				alert("你的浏览器不支持LocalStorage，请你更新浏览器");	
+			}
+			else{
+				if(localStorage.key){
+                    var color = localStorage.getItem("key"); 
+					p.style.backgroundColor = color;
+                    console.log(color);
+				}
+				else{
+					localStorage.key = "orange";
+					p.style.backgroundColor = localStorage.getItem("key");
+				}
+			}
+		}
+	</script>
+</html>
