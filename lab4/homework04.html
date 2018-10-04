@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+		<link rel="icon" href="images/mail.ico" />
+		<style type="text/css">
+			#container{
+				border:2px solid gray;
+			    width:180px;
+		    	height:180px;
+		    	margin:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<b>上传头像</b>
+		<div id="container"></div>
+	</body>
+	<script type="text/javascript">
+		if (typeof FileReader == 'undefined' ){
+	            result.innerHTML = "<p>抱歉，你的浏览器不支持 FileReader</p>";
+	            file.setAttribute( 'disabled','disabled' );
+	    }
+		window.ondragover = function(ev){
+			ev.preventDefault();
+		}
+		window.ondrop = function(ev){
+			ev.preventDefault();
+		}
+		container.ondragover = function(ev){
+			ev.preventDefault();
+		}
+		container.ondrop = function(ev){
+			ev.preventDefault();
+			var file = ev.dataTransfer.files;
+			for(var i = 0;i<file.length;i++){
+				var f = file[i];
+				var reader = new FileReader();
+				reader.readAsDataURL(f);
+				reader.onload = function(f){
+					var image = new Image();
+					image.src = reader.result;
+					container.appendChild(image);
+				}
+			}
+		}
+	</script>
+</html>
