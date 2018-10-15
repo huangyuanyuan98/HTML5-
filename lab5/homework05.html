@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>钟表</title>
+		<style type="text/css">
+			canvas{
+				border: 1px pink solid;/*为了更好显示canvas,设置边框*/
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="clock" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var elem = document.getElementById('clock');
+        var context = elem.getContext('2d');
+//      context.translate(200,200);
+        function clock(){
+        	context.clearRect(0,0,400,400);
+            //圆
+            context.beginPath();
+            context.arc(200,200,170,0,2*Math.PI);
+            context.strokeStyle = "greenyellow";
+            context.lineWidth = 5;
+            context.stroke();
+            context.closePath();
+        
+            //红矩形
+            context.save();
+            context.translate(200,200);
+            for(i = 1;i < 13;i++){
+            	context.beginPath();
+            	context.fillStyle="red";
+            	context.fillRect(0, -160, 5, 20);
+            	//黑矩形
+              	for(j = 1;j < 5;j++){
+            		context.rotate(6/180 * Math.PI);
+            		context.fillStyle="black";
+            		context.fillRect(0, -160, 3, 10);
+            	}
+             	context.rotate(6/180 * Math.PI);
+            	context.font = "italic 15px 隶书";
+            	context.textAlign="center";
+                context.fillText(i, 0, -125, 15);
+                context.closePath();
+            }
+            context.restore();
+            
+            var time=new Date();
+            var seconds=time.getSeconds();
+            var minutes=time.getMinutes()+seconds/60;
+            var hours=time.getHours()+minutes/60;
+            if(hours>12){
+            	hours=hours-12
+            }
+            //时
+            context.save();
+            context.beginPath();
+            context.translate(200,200);
+            context.lineWidth=7;
+            context.strokeStyle = "purple";
+            context.rotate(hours*30*Math.PI/180);
+            context.moveTo(0,0);
+            context.lineTo(0,-100);
+            context.stroke();
+            context.closePath();
+            context.restore();
+            //分
+            context.save();
+            context.beginPath();
+            context.translate(200,200);
+            context.lineWidth=5;
+            context.strokeStyle = "lightpink";
+            context.rotate(minutes*6*Math.PI/180);
+            context.moveTo(0,0);
+            context.lineTo(0,-120);
+            context.stroke();
+            context.closePath();
+            context.restore();
+            //秒
+            context.save();
+            context.translate(200,200);
+            context.beginPath();
+            context.lineWidth=3;
+            context.strokeStyle = "red";
+            context.rotate(seconds*6*Math.PI/180);
+            context.moveTo(0,0);
+            context.lineTo(0,-120);
+            context.stroke();
+            context.closePath();
+            context.beginPath();
+            context.arc(0,-100,5,0,2*Math.PI);
+            context.strokeStyle = "red";
+            context.lineWidth = 3;
+            context.stroke();
+            context.closePath();
+            context.beginPath();
+            context.arc(0,-100,2,0,2*Math.PI);
+            context.strokeStyle = "black";
+            context.lineWidth = 3.5;
+            context.stroke();
+            context.closePath();
+            context.restore();
+            
+            context.save();
+            context.translate(200,200);
+            context.beginPath();
+            context.arc(0,0,5,0,2*Math.PI);
+            context.strokeStyle = "red";
+            context.lineWidth = 3;
+            context.stroke();
+            context.closePath();
+            context.beginPath();
+            context.arc(0,0,2,0,2*Math.PI);
+            context.strokeStyle = "black";
+            context.lineWidth = 3.5;
+            context.stroke();
+            context.closePath();
+            context.restore();
+        }
+        setInterval(clock,1000); 
+	</script>
+</html>
