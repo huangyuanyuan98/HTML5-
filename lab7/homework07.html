@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>响应式页面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<!--导航条-->
+		<div class="container" style="width: 100%!important;">
+			<nav class="navbar navbar-inverse" style="margin-bottom: 0!important;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+			    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-1">
+			      			<span class="sr-only">导航开关</span>
+			      			<span class="icon-bar"></span>
+			     			<span class="icon-bar"></span>
+			      			<span class="icon-bar"></span>
+			    		</button>
+			    		<a class="navbar-brand" href="#"><i class="glyphicon glyphicon-bell"></i>Brand</a>
+			  		</div>
+			  		<div class="collapse navbar-collapse" id="bs-1">
+			    		<ul class="nav navbar-nav">
+			      			<li class="active"><a href="#">Link</a></li>
+			      			<li><a href="#">Link</a></li>
+			      			<li><a href="#">Link</a></li>
+			      			<li><a href="#">Link</a></li>
+			      			<li><a href="#">Link</a></li>    
+			    		</ul>   
+			  		</div>
+			  	</div>
+			</nav>
+		</div>
+		<!--轮播图-->
+		<div id="generic" class="carousel slide" data-ride="carousel" style="margin-right: 15px;margin-left: 15px;">
+    		<ol class="carousel-indicators">
+      			<li data-target="#generic" data-slide-to="0" class="active"></li>
+      			<li data-target="#generic" data-slide-to="1"></li>
+      			<li data-target="#generic" data-slide-to="2"></li>
+    		</ol>
+    		<div class="carousel-inner" >
+      			<div class="item active">
+        			<img alt="First slide" src="imgs/banner1.jpg" >
+		    		<div class="carousel-caption">
+		    	  		<h3>轮播图1</h3>
+        			</div>
+      			</div>
+      			<div class="item">
+        			<img alt="Second slide" src="imgs/banner2.jpg" >
+        			<div class="carousel-caption">
+          				<h3>轮播图2</h3>
+			        </div>
+      			</div>
+      			<div class="item">
+        			<img alt="Third slide" src="imgs/banner3.jpg"  >
+		  				<div class="carousel-caption">
+          					<h3>轮播图3</h3>
+        				</div>
+      			</div>
+    		</div>
+    		<a class="left carousel-control" href="#generic" data-slide="prev">
+      			<span class="glyphicon glyphicon-chevron-left"></span>
+    		</a>
+    		<a class="right carousel-control" href="#generic" data-slide="next">
+      			<span class="glyphicon glyphicon-chevron-right"></span>
+    		</a>
+  		</div>
+  		<!--content-->
+  		<div class="row" style="margin-right: 100px;margin-left: 100px;">
+			<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;" >
+				<h1>
+					content area1 <small>first</small>
+				</h1>
+				<p>
+					“一杯咖啡的力量”，次日便有这样的评论形容总理到访创业大街所带来的鼓舞。
+					如今，3W咖啡已在深圳、广州等10个城市设立了分支机构。“总理咖啡”给全国更多创业创新者带来了力量。值得注意的是，这股“双创”的力量可谓“实实在在”，展示了实体经济尤其是制造业转型升级的广阔前景。
+				<p>
+			</div>
+			<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;">
+				<h1>
+					content area2 <small>second</small>
+				</h1>
+				<p>
+					“一杯咖啡的力量”，次日便有这样的评论形容总理到访创业大街所带来的鼓舞。
+					如今，3W咖啡已在深圳、广州等10个城市设立了分支机构。“总理咖啡”给全国更多创业创新者带来了力量。值得注意的是，这股“双创”的力量可谓“实实在在”，展示了实体经济尤其是制造业转型升级的广阔前景。
+				<p>
+			</div>
+			<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; ">
+				<h1>
+					content area3 <small>third</small>
+				</h1>
+				<p>
+					“一杯咖啡的力量”，次日便有这样的评论形容总理到访创业大街所带来的鼓舞。
+					如今，3W咖啡已在深圳、广州等10个城市设立了分支机构。“总理咖啡”给全国更多创业创新者带来了力量。值得注意的是，这股“双创”的力量可谓“实实在在”，展示了实体经济尤其是制造业转型升级的广阔前景。
+				<p>
+			</div> 
+		</div>
+		<!--表格-->
+		<div class = "table-responsive" style="margin-right: 100px;margin-left: 100px;">
+			<h1>
+				Report Table <small>Form Detail</small>
+			</h1>
+			<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>#</th>
+			        <th>first</th>
+			        <th>second</th>
+			        <th>third</th>
+			        <th>forth</th>
+			        <th>fifth</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <td>1</td>
+			        <td>产品11111的详细情况</td>
+			        <td>23/10/2018</td>
+			        <td>待发货</td>
+			        <td>待发货</td>
+			        <td><input type="button" name="submit" value="提交" style="background-color: green;color: white;border-radius: 5px;border: solid green 2px;" /></td>
+			      </tr>
+			      <tr>
+			        <td>2</td>
+			        <td>产品22222的详细情况</td>
+			        <td>10/11/2018</td>
+			        <td>发货中</td>
+			        <td>发货中</td>
+			        <td><input type="button" name="submit" value="提交" style="background-color: green;color: white;border-radius: 5px;border: solid green 2px;" /></td>
+			      </tr>
+			      <tr>
+			        <td>3</td>
+			        <td>产品33333的详细情况</td>
+			        <td>20/10/2018</td>
+			        <td>待确认</td>
+			        <td>发货中</td>
+			        <td><input type="button" name="submit" value="提交" style="background-color: green;color: white;border-radius: 5px;border: solid green 2px;" /></td>
+			      </tr>
+			      <tr>
+			        <td>4</td>
+			        <td>产品44444的详细情况</td>
+			        <td>20/10/2018</td>
+			        <td>已退货</td>
+			        <td>已退货</td>
+			        <td><input type="button" name="submit" value="提交" style="background-color: green;color: white;border-radius: 5px;border: solid green 2px;" /></td>
+			      </tr>
+			    </tbody>
+			</table>
+		</div>
+		<div class="row" style="margin-right: 100px;margin-left: 100px;">
+			<div class="col-md-6 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;" >
+				<img alt="pic" src="imgs/design.jpg" width="400px">
+			</div>
+			<div class="col-md-6 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;">
+				<h1>
+					content area2 <small>second</small>
+				</h1>
+				<p>
+					“一杯咖啡的力量”，次日便有这样的评论形容总理到访创业大街所带来的鼓舞。
+					如今，3W咖啡已在深圳、广州等10个城市设立了分支机构。“总理咖啡”给全国更多创业创新者带来了力量。值得注意的是，这股“双创”的力量可谓“实实在在”，展示了实体经济尤其是制造业转型升级的广阔前景。
+				<p>
+					<div class="row">
+						<div class="col-md-6 col-xs-12">
+							<ul style="list-style: none;padding: 0!important;">
+								<li>列表1</li>
+								<li>列表2</li>
+								<li>列表3</li>
+								<li>列表4</li>
+								<li>列表5</li>
+							</ul>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<img alt="pic" src="imgs/11.jpg" width="200px">
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row" style="margin-right: 100px;margin-left: 100px;">
+			<div class="col-md-7 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;" >
+				<h1>Images Show <small>images</small></h1>
+				<div class="row">
+					<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 5px; padding-left: 5px;">
+						<img alt="pic" src="imgs/11.jpg" width="150px" style="border-radius: 15px;">
+					</div>
+					<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 5px; padding-left: 5px;">
+						<img alt="pic" src="imgs/11.jpg" width="150px" style="border-radius: 15px;">
+					</div>
+					<div class="col-md-4 col-xs-12" style="position: relative; min-height: 1px; padding-right: 5px; padding-left: 5px;">
+						<img alt="pic" src="imgs/11.jpg" width="150px" style="border-radius: 15px;">
+					</div>
+				</div>
+				<p>如今，3W咖啡已在深圳、广州等10个城市设立了分支机构。“总理咖啡”给全国更多创业创新者带来了力量。值得注意的是，这股“双创”的力量可谓“实实在在”，展示了实体经济尤其是制造业转型升级的广阔前景</p>
+			</div>
+			<div class="col-md-5 col-xs-12" style="position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;">
+				<h1>User Login <small>form</small></h1>
+				<div class="form-group">
+					<form class="form-inline">
+						<div class="row">
+							<div class="col-md-3">
+								<label for="InputEmail"> Email </label> 
+							</div>
+							<div class="col-md-9">
+								<input type="email" class="form-control" id="InputEmail1" placeholder="Email">
+							</div>
+						</div>
+					</form>
+					<p></p>
+					<form class="form-inline">
+						<div class="row">
+							<div class="col-md-3">
+								<label for="InputPassword"> Password </label> 
+							</div>
+							<div class="col-md-9">
+								<input type="password" class="form-control" placeholder="Password">
+							</div>
+						</div>
+					</form>
+					<p></p>
+					<form class="form-inline">
+						<div class="row">
+							<div class="col-md-3">
+							</div>
+							<div class="col-md-9">
+								<input type="checkbox" name="blue" id="blue" value="blue" />blue  &nbsp;&nbsp;
+								<input type="checkbox" name="red" id="red" value="red" />red
+							</div>
+						</div>
+					</form>
+					<p></p>
+					<form class="form-inline">
+						<div class="row">
+							<div class="col-md-3">
+							</div>
+							<div class="col-md-9">
+								<input type="button" name="sign" value="Sign in" style="background-color: skyblue;color: white;border-radius: 5px;border: solid skyblue 2px;" />
+							</div>
+						</div>
+					</form>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #101010;">
+			<div style="width: 100%;">
+				<span style="color: white;width: 10%;">&nbsp;&nbsp;&nbsp;网站地图</span>
+				<span style="float: right;"><a>返回顶部</a></span>
+			</div>
+			<p></p>
+			<div style="width: 100%;">
+				<span style="color: white;">&nbsp;&nbsp;&nbsp;Copyright @ <a>www.xxxx.com</a></span>
+			</div>
+		</div>
+		<script src="js/jquery.js"></script>    
+   		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
